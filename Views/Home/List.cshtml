@@ -1,0 +1,34 @@
+﻿@model IEnumerable<GROUPJ_A1.Models.Employee>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<h2>Emploeees</h2>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">ID</div>
+        <div class="col-md-2 panel-title">PHOTO and NAME</div>
+        <div class="col-md-6 panel-title">DEPARTMENT</div>
+        <div class="col-md-2 panel-title">LOCATION</div>
+    </div>
+    <hr />
+    @{
+
+        foreach (var item in Model)
+        {
+            <div class="row table-striped">
+                <div class="col-md-2"><img src="@item.EmpMugShot" alt="@item.EmployeeJName" /></div>
+                <div class="col-md-6 panel-title">@item.EmpDeartment.DptmtJName</div>
+                <div class="col-md-2 panel-title"> @item.EmpLocation.LctnJName</div>
+            </div>
+            <hr />
+
+        }
+    }
+
+</div>
